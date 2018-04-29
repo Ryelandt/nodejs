@@ -1,0 +1,325 @@
+*{
+    box-sizing: border-box; 
+    font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif;/*"East Sea Dokdo",sans-serif*/;
+    margin:0;
+    padding:0;   
+}
+/*ordres generaux*/
+body{
+    background:#00e7ff; 
+}
+
+div.footer{ 
+    background:#1d8eff;
+   
+    height: 200px;
+    min-width: 320px;
+    width: 100%;
+}
+h4{
+    font-size: 20px;
+    color:white;
+}
+h4~p{
+    color:antiquewhite
+}
+h3{
+    color: rgb(10, 9, 9);
+    font-size: 60px;
+    text-align: center;
+}
+h3~p{
+    color: antiquewhite;
+    text-align: center;
+}
+ section.present ,section.B,section.abdel,footer{  
+    background: rgb(248, 248, 248); 
+    display: flex;
+    flex-wrap: wrap;
+    height: auto; 
+    justify-content: center;
+    width:100%;
+}
+
+
+article.content2{
+    
+    background: #ffffff;
+    border:  3px solid #f6f7f7; 
+    flex: 1;
+    height: 600px;
+    min-width: 320px;
+    padding:30px;
+    text-align: center;
+    width: 300px;
+}
+
+.content2 h2{
+    color: #4d4d4d;
+    font-size: 1.777em;
+    line-height: 1.2em;
+}
+.content2 p{
+    color: #4d4d4d;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.content2 img{
+    width:50%;
+}
+
+
+article.content3{
+   
+    background: rgb(252, 252, 252);
+    border:  3px solid #f6f7f7;
+    flex: 1;
+    height: 100px;
+    min-width: 320px;
+    width: 300px;
+}
+
+header {
+    background: #1d8eff;  
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index:  2000;
+}
+figure.logo{
+    height: 100px;
+    background:#1d8eff;  
+    width: 150px;
+}
+
+.navbar{ 
+   
+    height: 100px;
+    position: absolute;
+    right: 10Px;
+    top: 0 ;
+   
+}
+
+
+section.slider{  
+    background:white;
+    overflow: hidden;
+    width:80%;
+    margin-left: 10%;
+}
+#forum{
+    background: #1d8eff;
+    border-radius: 5px;
+    margin: 15%;
+    height: 950px;
+    width: 70%;
+    
+}
+#forum button{
+    color: #ff9a00;
+    background: #00e7ff;
+    margin-left:20%;
+}
+label{
+    color: #fffff9;
+    margin-left:20%;
+}
+#forum h1{
+    position: relative;
+    left:100px;
+    top:100px;
+    color:#00e7ff;
+    font-weight: bolder;
+   
+}
+#forum form{
+   
+   position: relative;
+    top:20%;
+   
+}
+#field-1,#field-2{
+    margin-left:20%;
+    width: 60%;
+
+}
+
+#field-3{
+    margin-left:25%;
+    width: 50%;
+   
+}
+
+/*partie cartes*/
+.carte{ 
+    min-width:320px;   
+    perspective:700px;
+    width: 100%;
+}
+ /* c'est la perspective qui fait effet 3d*/
+
+
+
+.carte, .devant, .arr{   
+    height:220px; 
+    width:320px;
+}
+
+.arrLogo{   
+    height:10px; 
+    width:320px;
+}
+
+.main{ transition: 0.6s;/*temps total de la rotation*/
+
+transform-style: preserve-3d ;/* fait comprendre qu'il ya 2 faces*/
+
+}
+.devant, .arr, .arrLogo{
+    backface-visibility: hidden;/*casse la visisbilité / transparence de la partie arriere*/
+    position: absolute; 
+        top:0;
+        left:0;
+}
+.devant {
+    transform: rotateY(0deg); 
+    z-index: 2;   
+}
+.arr{    
+    background: black;
+    border-radius:10px;
+    color:white;
+    padding:25px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+.arrLogo{
+    
+    border-radius:10px;
+    padding:10px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+a.savoir{ 
+    background:orange; 
+    border-radius: 15px;
+    color:black;
+    display: block;
+    font-size: 14px;
+    height:40px;
+    line-height: 40px;
+    margin: 50px auto 0px;
+    text-align: center;
+    text-decoration: none; 
+    width:100px;   
+}
+a.savoir:hover{
+    background:orangered
+}
+.logo img { 
+    margin-left:10px;
+    width:80%;
+}
+/* grand ecran */
+@media screen and (min-width:992px){
+    nav.couleur{ 
+        background: #00e7ff;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+      
+    }  
+    .carte:hover .main{
+        transform: rotateY(180deg); 
+        transform-origin:160deg 0; /*180=moitié de 360 = centre de rotation. verticalité y=0*/
+    }
+}
+/*  ecran moyen */
+@media screen and (min-width:768px) and (max-width:991px) {     
+    nav.couleur{ 
+        background:  #00e7ff;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+
+    } 
+    .navbar{
+        top:0px
+    }
+    .logo img{
+        height:auto;
+        margin-top:5px;
+        margin-left:10px;
+        width:50%;
+     }
+     label{
+ 
+        margin-left:10%;
+    }
+   
+}
+/* petit ecran */
+@media screen and (max-width:767px) {
+    nav.couleur{ 
+        background: #00e7ff;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+    }
+     
+    .logo img{
+        height:auto;
+        margin-top:5px;
+        margin-left:10px;
+        width:40%;
+     }
+     .arrLogo{   
+        height:100px; 
+        width:100px;
+    }
+    section.slider{
+        height:0;
+        visibility: hidden;
+    }
+    section.present{
+       
+        position: relative;
+        top:100px;
+        padding:10px;
+        margin-bottom: 40%;
+        border-radius: 5px;
+     
+    }
+    label{
+ 
+        margin-left:5%;
+    }
+    
+    #field-1,#field-2{
+        margin-left:5%;
+        width: 90%;
+        
+    
+    }
+    
+    #field-3{
+        margin-left:5%;
+        width: 90%;
+        height: 400px;
+    }
+  
+    #forum{
+        background: #1d8eff;
+        border-radius: 5px;
+        margin: 5%;
+        height: 900px;
+        width: 90%;
+        
+    }
+    
+    
+}
